@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+    Author Usernames: Sekiyo, Jose
+    Date Created: August 28th, 2019
+    Date Edited: October 14th, 2020
+    Purpose: Adds the Child background, for playing younger adventurers.
+-->
+<elements>
+	<info>
+		<name>Child</name>
+		<description>Child Background</description>
+		<author url="https://app.roll20.net/campaigns/details/4878753/gamer-time">Bruh Adventure, the Gamer Time Campaign</author>
+		<update version="0.0.1">
+			<file name="background-child.xml" url="https://app.roll20.net/campaigns/details/4878753/gamer-time" />
+		</update>
+	</info>
+	
+	<element name="Child" type="Background" source="Bruh Adventure" id="ID_WIKI_BACKGROUND_CHILD">
+		<description>
+			<p>You are a carefree child adventurer, you have either lost your parents or grown to live without them and have left to adventure. Due to this, you cannot do things most fully grown adventurers can, however your appearance tends to attract people willing to help and assist you in endeavors. And while some may think you incapable, your size and appearance does bring some things into your favor, (and some out).</p>
+			<ul class="unstyled">
+				<li><strong>Skill Proficiencies:</strong> Persuasion, Stealth</li>
+				<li><strong>Languages:</strong> One of your choice</li>
+				<li><strong>Tool Proficiencies:</strong> One type of Artisan's Tools, one type of Gaming Set</li>
+				<li><strong>Equipment:</strong> Common clothes, 30 darts, a pouch containing 10 gold pieces</li>
+			</ul>
+			<div element="ID_BACKGROUND_FEATURE_YOUTHFUL_INNOCENCE" />
+			<h5>Curious Nature</h5>
+			<p>What was your reason to venture from the place you call home? Either select from the table or roll for one.</p>
+			<table>
+				<thead>
+					<tr><td>d8</td><td>Curious Nature</td></tr>
+				</thead>
+				<tr><td>1</td><td>Death of Guardian. Your parent or guardian has recently become deceased, causing you to go out and discover the world.</td></tr>
+				<tr><td>2</td><td>Providing. You need to go out to get basic necessities and coin for your family or yourself to live off of.</td></tr>
+				<tr><td>3</td><td>Forced Out. Either knowingly or unknowingly, you were kicked or thrown out of your home and require to live without it.</td></tr>
+				<tr><td>4</td><td>Studies. You left your home to increase your knowledge of the world or of a topic.</td></tr>
+				<tr><td>5</td><td>Adventure. You left your home because you have always been a natural adventurer and wish to see the world.</td></tr>
+				<tr><td>6</td><td>Coming of Age. You left your home to prove your maturity, regardless of age.</td></tr>
+				<tr><td>7</td><td>Family. You left your current home to visit other family than ones you have immediate access to.</td></tr>
+				<tr><td>8</td><td>Response. You left your home to assist with circumstances somewhere.</td></tr>
+			</table>
+		</description>
+		<setters>
+			<set name="sourceUrl">https://app.roll20.net/campaigns/details/4878753/gamer-time</set>
+		</setters>		
+		<rules>
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_PERSUASION" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_STEALTH" />
+			<select type="Language" name="Language (Child)" supports="Standard||Exotic" />
+			<select type="Proficiency" name="Tool Proficiency (Child)" supports="Gaming Set" />
+			<select type="Proficiency" name="Tool Proficiency (Child)" supports="Artisan tools" />
+			<grant type="Background Feature" id="ID_BACKGROUND_FEATURE_YOUTHFUL_INNOCENCE" requirements="!ID_INTERNAL_GRANT_OPTIONAL_BACKGROUND_FEATURE"/>
+			<select type="Background Feature" name="Variant Feature" supports="Optional Background Feature" optional="true" />
+			<select name="Personality Trait" type="List" number="2">
+				<item id="1">I find myself easily excited by mundane things.</item>
+				<item id="2">I always find a need to talk to others about things that I have seen, even if they clearly aren't interested.</item>
+				<item id="3">I find myself wishing to grow quickly for the benefits of adulthood, disregarding the benefits of childhood.</item>
+				<item id="4">Lies I fabricate are often absurd and creative.</item>
+				<item id="5">I find myself easily taking influence from those older or wiser than me.</item>
+				<item id="6">I was raised to believe that those I look up to are always correct.</item>
+				<item id="7">I try to make friends with everyone, even if they seem harsh to me or others.</item>
+				<item id="8">I am easy to obtain the trust of, however once broken it is impossible to regain.</item>
+			</select>
+			<select name="Ideal" type="List">
+				<item id="1">Rebellion. We have no obligation to listen to anyone, oftentimes the decider of rules are mislead. (Chaotic)</item>
+				<item id="2">Redemption. Everyone has good in them, everyone can be redeemed, regardless of the evil act. (Good)</item>
+				<item id="3">Order. Trust must be given to the authorities to protect the common people, they have our best interests in mind. (Lawful)</item>
+				<item id="4">Power. There are some who are worth less than others, and deserve to be treated as such. (Evil)</item>
+				<item id="5">Indifference. Get through life and don't trouble yourself in the issues of others, lift your own weight and nothing else. (Neutral)</item>
+				<item id="6">Survival. Some issues are better left avoided than dealt with. (Any)</item>
+			</select>
+			<select name="Bond" type="List">
+				<item id="1">I find myself looking back on my parents or parental figures.</item>
+				<item id="2">I would put myself into lethal danger multiple times if it meant I could save one of my friends.</item>
+				<item id="3">I keep my distance from my family, as I have a troubled past with them.</item>
+				<item id="4">I must maintain my families work, no matter the cost.</item>
+				<item id="5">I must prove to those who didn't believe in me that I am capable of achieving great things.</item>
+				<item id="6">I have made friends with an animal and would be horrified upon losing them.</item>
+			</select>
+			<select name="Flaw" type="List">
+				<item id="1">I am considered talkative and loud by many.</item>
+				<item id="2">I would jump off a bridge if my friends did it.</item>
+				<item id="3">I would be the one to jump off the bridge first.</item>
+				<item id="4">I show no respect towards any authoritative figures, including my parents.</item>
+				<item id="5">I often tend to require support to do difficult things.</item>
+				<item id="6">I find myself daydreaming in situations that require concentration.</item>
+			</select>
+		</rules>			
+	</element>
+	
+	<element name="Feature: Youthful Innocence" type="Background Feature" source="Bruh Adventure" id="ID_BACKGROUND_FEATURE_YOUTHFUL_INNOCENCE">
+		<supports>Background Feature</supports>
+		<description>
+			<p>You are or appear innocent to most strangers, some may grant you mercy if attacking or even strive to help you out on your quests. Work with your DM to find NPCs which will fall under this.</p>
+		</description>
+		<sheet alt="Youthful Innocence" />
+	</element>
+	
+</elements>
